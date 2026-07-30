@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JUPAC Pictures · Teatro — Paróquia Menino Jesus de Praga</title>
+<meta name="description" content="JUPAC — Jovens Unidos Pelo Amor de Cristo. Grupo de teatro da Paróquia Menino Jesus de Praga, São José do Rio Preto. Todo sábado, às 17h.">
+<meta name="theme-color" content="#0A0A0C">
+
+<!-- ===== prévia bonita no WhatsApp / Instagram ===== -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="JUPAC Pictures · Teatro">
+<meta property="og:description" content="Jovens Unidos Pelo Amor de Cristo — Paróquia Menino Jesus de Praga · São José do Rio Preto. Todo sábado, às 17h.">
+<meta property="og:image" content="fotos/elenco-hollywood.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230A0A0C'/><text x='50' y='68' font-size='46' font-family='Georgia,serif' font-weight='bold' fill='%23E5C264' text-anchor='middle'>J</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════════════════════════
+   JUPAC PICTURES — folha de estilo
+   ══════════════════════════════════════════════════════════════ */
+:root{
+  --preto:#0A0A0C;
+  --carvao:#16161A;
+  --carvao2:#1F1F25;
+  --ouro:#E5C264;
+  --ouro-esc:#8A6F2E;
+  --vermelho:#B8332E;
+  --creme:#F2EEE4;
+  --cinza:#8A8A93;
+  --disp:'Anton',Impact,'Arial Narrow',sans-serif;
+  --corpo:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --mono:'Courier Prime','Courier New',monospace;
+  --max:1200px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--preto);color:var(--creme);font-family:var(--corpo);
+  line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+
+/* ---------- grão de filme (SVG puro, ~1KB, sem imagem) ---------- */
+body::before{
+  content:'';position:fixed;inset:-50%;z-index:9998;pointer-events:none;
+  opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grao .6s steps(3) infinite;
+}
+@keyframes grao{
+  0%{transform:translate(0,0)}33%{transform:translate(-2%,1%)}66%{transform:translate(1%,-2%)}100%{transform:translate(0,0)}
+}
+/* vinheta de sala de cinema */
+body::after{
+  content:'';position:fixed;inset:0;z-index:9997;pointer-events:none;
+  background:radial-gradient(ellipse at center,transparent 42%,rgba(0,0,0,.55) 100%);
+}
+
+/* ---------- utilitários ---------- */
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:22px}
+.eyebrow{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--ouro);display:flex;align-items:center;gap:14px;margin-bottom:14px;
+}
+.eyebrow::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--ouro-esc),transparent)}
+h2.sec{
+  font-family:var(--disp);font-size:clamp(2.4rem,9vw,4.6rem);line-height:.92;
+  letter-spacing:.01em;text-transform:uppercase;margin-bottom:.35em;
+}
+h2.sec em{font-style:normal;color:var(--ouro)}
+.lead{color:var(--cinza);max-width:60ch;font-size:1rem}
+section{padding:clamp(70px,11vw,130px) 0;position:relative}
+
+/* revelar ao rolar */
+.rev{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.rev.on{opacity:1;transform:none}
+
+/* ══════ ABERTURA: contagem de rolo de filme ══════ */
+#leader{
+  position:fixed;inset:0;z-index:10000;background:#08080A;
+  display:grid;place-items:center;cursor:pointer;
+}
+#leader.sai{animation:leaderSai .55s ease forwards}
+@keyframes leaderSai{to{opacity:0;visibility:hidden;transform:scale(1.12)}}
+.leader-box{position:relative;width:min(62vmin,340px);aspect-ratio:1}
+.leader-box svg{position:absolute;inset:0;width:100%;height:100%}
+.leader-num{
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-family:var(--disp);font-size:min(30vmin,170px);color:var(--creme);
+}
+.leader-num span{position:absolute;opacity:0;animation:num .8s ease forwards}
+.leader-num span:nth-child(1){animation-delay:0s}
+.leader-num span:nth-child(2){animation-delay:.62s}
+.leader-num span:nth-child(3){animation-delay:1.24s}
+@keyframes num{0%{opacity:0;transform:scale(1.5)}18%{opacity:1;transform:scale(1)}82%{opacity:1}100%{opacity:0;transform:scale(.9)}}
+.leader-sweep{transform-origin:50% 50%;animation:sweep 1.86s linear forwards}
+@keyframes sweep{to{transform:rotate(1080deg)}}
+.leader-skip{
+  position:absolute;bottom:8vh;left:50%;transform:translateX(-50%);
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.25em;color:#5a5a62;text-transform:uppercase;
+}
+
+/* ══════ HERO ══════ */
+#hero{
+  min-height:100svh;display:grid;place-items:center;text-align:center;
+  padding:110px 22px 90px;position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:url('fotos/elenco-hollywood.jpg') center 22%/cover no-repeat;
+  filter:grayscale(.55) contrast(1.05) brightness(.42);
+  transform:scale(1.06);
+}
+.hero-veu{
+  position:absolute;inset:0;z-index:1;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 42%,rgba(10,10,12,.35),rgba(10,10,12,.9) 72%),
+    linear-gradient(180deg,rgba(10,10,12,.9) 0%,rgba(10,10,12,.25) 32%,rgba(10,10,12,.75) 74%,var(--preto) 100%);
+}
+/* holofote que segue o dedo */
+#spot{
+  position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.5;
+  background:radial-gradient(circle 320px at var(--mx,50%) var(--my,40%),rgba(229,194,100,.16),transparent 72%);
+  transition:opacity .4s;
+}
+.hero-cont{position:relative;z-index:3;max-width:900px}
+
+.selo-estudio{
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.4em;text-transform:uppercase;
+  color:var(--ouro);margin-bottom:26px;
+}
+.selo-estudio i{font-style:normal;opacity:.55}
+
+.marquise{
+  font-family:var(--disp);text-transform:uppercase;line-height:.82;
+  font-size:clamp(4.4rem,23vw,13rem);letter-spacing:.02em;
+  color:var(--creme);
+  text-shadow:
+    0 0 14px rgba(229,194,100,.45),
+    0 0 46px rgba(229,194,100,.28),
+    0 0 100px rgba(229,194,100,.14);
+}
+.marquise .pisca{animation:pisca 5.5s infinite;color:var(--ouro)}
+@keyframes pisca{
+  0%,88%,100%{opacity:1;text-shadow:0 0 14px rgba(229,194,100,.7),0 0 50px rgba(229,194,100,.4)}
+  90%{opacity:.28;text-shadow:none}
+  92%{opacity:1}
+  94%{opacity:.4;text-shadow:none}
+  96%{opacity:1}
+}
+.hero-sig{
+  font-family:var(--mono);font-size:clamp(.62rem,2.4vw,.78rem);letter-spacing:.26em;
+  text-transform:uppercase;color:var(--creme);opacity:.9;margin-top:20px;
+}
+.hero-sig b{color:var(--ouro);font-weight:400}
+.hero-frase{
+  font-size:clamp(1rem,3.6vw,1.3rem);color:var(--creme);opacity:.9;
+  max-width:34ch;margin:32px auto 0;font-weight:500;line-height:1.5;
+}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:15px 26px;border:1px solid var(--ouro-esc);border-radius:2px;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ouro);background:rgba(229,194,100,.05);
+  transition:background .3s,border-color .3s,transform .2s;min-height:48px;
+}
+.btn:hover,.btn:focus-visible{background:rgba(229,194,100,.16);border-color:var(--ouro);transform:translateY(-2px)}
+.btn.solido{background:var(--ouro);color:#17130a;border-color:var(--ouro);font-weight:700}
+.btn.solido:hover,.btn.solido:focus-visible{background:#f2d789;color:#17130a}
+.rolar{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.3em;color:var(--cinza);text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:9px;
+}
+.rolar::after{content:'';width:1px;height:34px;background:linear-gradient(var(--ouro),transparent);animation:desce 2s ease-in-out infinite}
+@keyframes desce{0%,100%{transform:scaleY(.35);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+
+/* ══════ ELENCO ══════ */
+.grade-elenco{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:44px;
+}
+@media(min-width:640px){.grade-elenco{grid-template-columns:repeat(3,1fr);gap:20px}}
+@media(min-width:980px){.grade-elenco{grid-template-columns:repeat(4,1fr);gap:22px}}
+
+.ator{
+  position:relative;background:var(--carvao);border:1px solid #26262d;border-radius:3px;
+  overflow:hidden;text-align:left;width:100%;display:block;
+  transition:border-color .35s,box-shadow .35s,transform .35s;
+  transform-style:preserve-3d;
+}
+.ator:hover,.ator:focus-visible{
+  border-color:var(--ouro-esc);box-shadow:0 18px 44px rgba(0,0,0,.6),0 0 0 1px rgba(229,194,100,.14);
+}
+.ator-foto{position:relative;aspect-ratio:4/5;overflow:hidden;background:#101014}
+
+/* --cor vai de 0 (preto e branco) a 1 (colorido).
+   Quem controla é a rolagem — veja "cor revelando conforme rola" lá no JS.
+   Assim funciona no celular, onde não existe hover. */
+.ator-foto img{
+  width:100%;height:100%;object-fit:cover;--cor:0;
+  filter:grayscale(calc(100% - var(--cor) * 100%))
+         contrast(calc(114% - var(--cor) * 12%))
+         brightness(calc(92% + var(--cor) * 8%));
+  transform:scale(calc(1 + var(--cor) * .04));
+  transition:filter .22s linear,transform .55s cubic-bezier(.2,.7,.3,1);
+}
+/* no computador o hover ainda força cor cheia */
+.ator:hover .ator-foto img,.ator:focus-visible .ator-foto img{
+  filter:grayscale(0) contrast(1.02) brightness(1);transform:scale(1.06);
+}
+/* card em foco — o holofote que desce junto com o dedo */
+.ator.foco{
+  border-color:var(--ouro-esc);
+  box-shadow:0 0 0 1px rgba(229,194,100,.15),0 14px 36px rgba(0,0,0,.5);
+}
+.ator.foco .ator-num{background:rgba(229,194,100,.14);border-color:rgba(229,194,100,.5)}
+
+.ator-foto::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 45%,rgba(10,10,12,.92) 100%);
+}
+.ator-num{
+  position:absolute;top:9px;left:10px;z-index:2;
+  font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;color:var(--ouro);
+  background:rgba(10,10,12,.72);padding:3px 7px;border:1px solid rgba(229,194,100,.28);
+  transition:background .3s,border-color .3s;
+}
+.ator-info{padding:13px 14px 16px;position:relative;z-index:2}
+.ator-nome{
+  font-family:var(--disp);font-size:clamp(.95rem,3.4vw,1.22rem);text-transform:uppercase;
+  line-height:1.05;letter-spacing:.01em;
+}
+.ator-funcao{
+  font-family:var(--mono);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ouro);margin-top:7px;
+}
+.ator-funcao.coord{color:var(--vermelho);}
+.ator-frase{
+  font-size:.78rem;color:var(--cinza);margin-top:11px;line-height:1.45;
+  border-top:1px solid #26262d;padding-top:11px;
+}
+.ator-frase b{display:block;font-weight:600;color:#b9b9c2;font-size:.66rem;
+  letter-spacing:.1em;text-transform:uppercase;margin-top:7px;font-family:var(--mono)}
+
+/* ══════ EM CARTAZ ══════ */
+.trilho{
+  display:grid;grid-auto-flow:column;grid-auto-columns:76%;gap:14px;
+  overflow-x:auto;scroll-snap-type:x mandatory;margin-top:44px;
+  padding:4px 22px 22px;margin-inline:-22px;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+}
+.trilho::-webkit-scrollbar{display:none}
+@media(min-width:640px){.trilho{grid-auto-columns:44%}}
+@media(min-width:980px){
+  .trilho{grid-auto-flow:row;grid-template-columns:repeat(5,1fr);overflow:visible;
+    padding-inline:0;margin-inline:0;gap:18px}
+}
+.poster{
+  scroll-snap-align:center;position:relative;aspect-ratio:2/3;border-radius:3px;
+  overflow:hidden;border:1px solid #2a2a32;display:flex;flex-direction:column;
+  justify-content:flex-end;padding:18px 16px;text-align:left;
+  transition:transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s,border-color .4s;
+}
+.poster:hover,.poster:focus-visible{
+  transform:translateY(-8px);border-color:var(--ouro-esc);
+  box-shadow:0 26px 54px rgba(0,0,0,.65);
+}
+.poster-art{position:absolute;inset:0;z-index:0}
+.poster-art::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 30%,rgba(6,6,8,.86) 78%,rgba(6,6,8,.96) 100%);
+}
+/* artes por esquete */
+.art-rafael{background:radial-gradient(circle at 50% 22%,#1d4b56,#0d2028 55%,#070d11)}
+.art-life{background:radial-gradient(circle at 50% 28%,#7a1f1c,#2a0b0a 58%,#0a0405)}
+.art-visita{background:radial-gradient(circle at 50% 26%,#8a5a1c,#3a2308 58%,#0d0803)}
+.art-test{background:linear-gradient(170deg,#d8d2c2,#b5ae9c 60%,#8f8878)}
+.art-outros{background:repeating-linear-gradient(45deg,#141419,#141419 12px,#191920 12px,#191920 24px)}
+
+.poster-glifo{
+  position:absolute;left:50%;top:34%;transform:translate(-50%,-50%);
+  width:56%;opacity:.42;z-index:1;
+}
+.poster-corpo{position:relative;z-index:2}
+.poster-num{
+  position:absolute;top:14px;left:14px;z-index:3;font-family:var(--mono);
+  font-size:.58rem;letter-spacing:.2em;color:rgba(255,255,255,.75);
+}
+.poster.claro .poster-num{color:rgba(0,0,0,.55)}
+.poster-titulo{
+  font-family:var(--disp);text-transform:uppercase;line-height:.9;
+  font-size:clamp(1.5rem,6.4vw,2rem);letter-spacing:.01em;
+}
+@media(min-width:980px){.poster-titulo{font-size:1.65rem}}
+.poster.claro .poster-titulo{color:#1b1a16}
+.poster-tag{
+  font-size:.76rem;line-height:1.4;margin-top:9px;color:rgba(242,238,228,.82);
+  font-style:italic;
+}
+.poster.claro .poster-tag{color:rgba(20,18,14,.78)}
+.poster.claro .poster-art::after{background:linear-gradient(180deg,transparent 34%,rgba(216,210,194,.9) 76%)}
+.class-ind{
+  display:inline-flex;align-items:center;gap:7px;margin-top:14px;
+  font-family:var(--mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(242,238,228,.72);
+}
+.poster.claro .class-ind{color:rgba(20,18,14,.7)}
+.class-ind i{width:14px;height:14px;border-radius:2px;display:block;flex:none}
+.poster-ver{
+  margin-top:14px;font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ouro);display:flex;align-items:center;gap:6px;
+}
+.poster.claro .poster-ver{color:#8a5f14}
+.selo-mudo{
+  position:absolute;top:14px;right:14px;z-index:3;
+  font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;
+  border:1px solid rgba(255,255,255,.4);color:rgba(255,255,255,.8);padding:3px 6px;border-radius:2px;
+}
+.fita{
+  position:absolute;top:26px;left:-24px;z-index:3;width:120px;height:26px;
+  background:rgba(226,214,178,.28);transform:rotate(-32deg);
+  border-top:1px dashed rgba(255,255,255,.18);border-bottom:1px dashed rgba(255,255,255,.18);
+}
+.dica-arrasta{
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--cinza);
+  text-transform:uppercase;margin-top:8px;display:flex;align-items:center;gap:8px;
+}
+@media(min-width:980px){.dica-arrasta{display:none}}
+
+/* ══════ MODAL ══════ */
+dialog.ficha{
+  border:none;padding:0;background:transparent;max-width:560px;width:calc(100% - 32px);
+  color:var(--creme);
+}
+dialog.ficha::backdrop{background:rgba(4,4,6,.88);backdrop-filter:blur(4px)}
+.ficha-in{
+  background:var(--carvao);border:1px solid #2c2c35;border-top:3px solid var(--ouro);
+  padding:30px 26px 26px;position:relative;max-height:86svh;overflow-y:auto;
+}
+.ficha-fechar{
+  position:absolute;top:12px;right:14px;font-size:1.5rem;line-height:1;color:var(--cinza);
+  width:44px;height:44px;display:grid;place-items:center;
+}
+.ficha-fechar:hover{color:var(--ouro)}
+.ficha-kicker{font-family:var(--mono);font-size:.6rem;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--ouro);margin-bottom:10px}
+.ficha-titulo{font-family:var(--disp);font-size:clamp(1.9rem,7vw,2.7rem);
+  text-transform:uppercase;line-height:.95;margin-bottom:14px}
+.ficha-sinopse{color:#c9c9d2;font-size:.95rem;line-height:1.62}
+.ficha-linhas{margin-top:22px;border-top:1px solid #2c2c35;padding-top:18px;
+  display:grid;gap:11px;font-family:var(--mono);font-size:.72rem}
+.ficha-linhas div{display:grid;grid-template-columns:120px 1fr;gap:12px}
+.ficha-linhas dt{color:var(--cinza);letter-spacing:.14em;text-transform:uppercase;font-size:.6rem}
+.ficha-linhas dd{color:var(--creme)}
+
+/* ══════ BASTIDORES ══════ */
+.grade-eq{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:44px}
+@media(min-width:760px){.grade-eq{grid-template-columns:repeat(3,1fr);gap:18px}}
+.eq{
+  background:var(--carvao);border:1px solid #26262d;border-radius:3px;padding:22px 18px;
+  transition:border-color .35s,background .35s,transform .35s;position:relative;overflow:hidden;
+}
+.eq:hover{border-color:var(--ouro-esc);background:var(--carvao2);transform:translateY(-4px)}
+.eq svg{width:30px;height:30px;stroke:var(--ouro);fill:none;stroke-width:1.4;
+  stroke-linecap:round;stroke-linejoin:round;margin-bottom:15px}
+.eq-nome{font-family:var(--disp);font-size:1.22rem;text-transform:uppercase;line-height:1}
+.eq-dep{font-family:var(--mono);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ouro);margin-top:8px}
+.eq-txt{font-size:.82rem;color:var(--cinza);margin-top:12px;line-height:1.5}
+.versiculo{
+  text-align:center;margin-top:52px;font-family:var(--mono);font-size:.86rem;
+  color:var(--ouro);letter-spacing:.06em;
+}
+.versiculo span{display:block;color:var(--cinza);font-size:.62rem;letter-spacing:.24em;
+  text-transform:uppercase;margin-top:10px}
+
+/* ══════ GALERIA / ROLO DE FILME ══════ */
+#galeria[hidden]{display:none}
+.rolo{
+  margin-top:44px;background:#0d0d10;border-block:2px solid #1c1c22;
+  padding:14px 0;position:relative;
+}
+.rolo::before,.rolo::after{
+  content:'';position:absolute;left:0;right:0;height:14px;
+  background-image:radial-gradient(circle,#0A0A0C 3px,transparent 3.5px);
+  background-size:26px 14px;background-repeat:repeat-x;
+}
+.rolo::before{top:0}.rolo::after{bottom:0}
+.rolo-trilho{
+  display:grid;grid-auto-flow:column;grid-auto-columns:min(72vw,300px);gap:8px;
+  overflow-x:auto;scroll-snap-type:x mandatory;padding:16px 22px;
+  scrollbar-width:none;
+}
+.rolo-trilho::-webkit-scrollbar{display:none}
+.rolo-trilho img{
+  width:100%;aspect-ratio:3/2;object-fit:cover;scroll-snap-align:center;--cor:0;
+  filter:grayscale(calc(85% - var(--cor) * 85%)) contrast(calc(110% - var(--cor) * 10%));
+  transition:filter .22s linear;
+}
+
+/* ══════ CRÉDITOS + ORAÇÃO ══════ */
+#creditos{background:#060608;text-align:center;padding-block:clamp(80px,14vw,150px)}
+.cred-bloco{max-width:520px;margin-inline:auto;font-family:var(--mono)}
+.cred-estudio{font-family:var(--disp);font-size:clamp(1.5rem,6vw,2.2rem);
+  text-transform:uppercase;color:var(--ouro);letter-spacing:.04em}
+.cred-sub{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cinza);margin-top:8px}
+.cred-grupo{margin-top:44px}
+.cred-rot{font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--cinza);margin-bottom:12px}
+.cred-nomes{font-size:.92rem;line-height:1.9;color:var(--creme)}
+.cred-div{width:56px;height:1px;background:var(--ouro-esc);margin:44px auto}
+.oracao{
+  font-family:var(--corpo);font-size:clamp(1.02rem,4vw,1.22rem);line-height:1.75;
+  color:var(--creme);max-width:26ch;margin-inline:auto;
+}
+.oracao b{color:var(--ouro);font-weight:600;display:block;margin-top:18px;
+  font-family:var(--mono);font-size:.8rem;letter-spacing:.3em;text-transform:uppercase}
+
+/* ══════ RODAPÉ ══════ */
+footer{background:var(--preto);border-top:1px solid #1c1c22;padding-block:56px;text-align:center}
+.rp-logo{font-family:var(--disp);font-size:2.2rem;text-transform:uppercase;color:var(--ouro);letter-spacing:.04em}
+.rp-nome{font-family:var(--mono);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--creme);margin-top:10px}
+.rp-linhas{margin-top:26px;display:grid;gap:9px;font-size:.86rem;color:var(--cinza)}
+.rp-linhas strong{color:var(--creme);font-weight:600}
+.rp-insta{
+  display:inline-flex;align-items:center;gap:10px;margin-top:30px;
+  padding:14px 26px;border:1px solid var(--ouro-esc);border-radius:2px;min-height:48px;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ouro);
+  transition:background .3s,transform .2s;
+}
+.rp-insta:hover{background:rgba(229,194,100,.14);transform:translateY(-2px)}
+.rp-insta svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6}
+.rp-fim{margin-top:36px;font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;
+  text-transform:uppercase;color:#4d4d55;line-height:2}
+
+/* avatar de reserva quando a foto não carrega */
+.sem-foto{
+  width:100%;height:100%;display:grid;place-items:center;
+  background:linear-gradient(150deg,#1d1d24,#111116);
+  font-family:var(--disp);font-size:2.6rem;color:var(--ouro);letter-spacing:.06em;
+}
+
+/* ══════ acessibilidade: movimento reduzido ══════ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rev{opacity:1;transform:none}
+  #leader{display:none}
+  .ator-foto img,.rolo-trilho img{--cor:1}
+}
+:focus-visible{outline:2px solid var(--ouro);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║   ⭐ EDITE AQUI ⭐  — tudo do site sai deste bloco.        ║
+     ║   Troque texto entre aspas e pronto. Não mexa em          ║
+     ║   vírgulas, chaves { } nem colchetes [ ].                 ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<script>
+const INFO = {
+  sigla:     "JUPAC",
+  extenso:   "Jovens Unidos Pelo Amor de Cristo",
+  paroquia:  "Paróquia Menino Jesus de Praga",
+  cidade:    "São José do Rio Preto — SP",
+  encontro:  "Todo sábado, às 17 horas",
+  instagram: "https://www.instagram.com/jupacmjp/",
+  arroba:    "@jupacmjp"
+};
+
+/* ---- OS 8 DO ELENCO ----
+   funcao: "Ator" / "Atriz" / "Coordenação"
+   Para trocar a foto: coloque o arquivo na pasta fotos/ e mude o nome aqui. */
+const ELENCO = [
+  { nome:"Beatriz Mendonça", funcao:"Coordenação", coord:true,
+    frase:"Não tenhais medo! Abri as portas a Cristo!", autor:"São João Paulo II",
+    foto:"fotos/beatriz.jpg" },
+
+  { nome:"Gabriel Leone", funcao:"Coordenação", coord:true,
+    frase:"Nada pela força, tudo pelo amor.", autor:"São Francisco de Sales",
+    foto:"fotos/gabriel.jpg" },
+
+  { nome:"Celine", funcao:"Atriz",
+    frase:"Nada te perturbe, nada te espante. Só Deus basta.", autor:"Santa Teresa d'Ávila",
+    foto:"fotos/celine.jpg" },
+
+  { nome:"Iago Limonte", funcao:"Ator",
+    frase:"Nosso coração vive inquieto, enquanto não repousa em Ti.", autor:"Santo Agostinho",
+    foto:"fotos/iago.jpg" },
+
+  { nome:"Júlia Cuba", funcao:"Atriz",
+    frase:"Minha vocação é o amor.", autor:"Santa Teresinha do Menino Jesus",
+    foto:"fotos/julia.jpg" },
+
+  { nome:"Luan Catito", funcao:"Ator",
+    frase:"Todos nascem originais, mas muitos morrem como fotocópias.", autor:"São Carlo Acutis",
+    foto:"fotos/luan.jpg" },
+
+  { nome:"Mateus Rosolem", funcao:"Ator",
+    frase:"Se fores aquilo que deves ser, porás fogo ao mundo inteiro.", autor:"Santa Catarina de Sena",
+    foto:"fotos/mateus.jpg" },
+
+  { nome:"Rafaela Ocaína", funcao:"Atriz",
+    frase:"Reza, espera e não te preocupes.", autor:"São Padre Pio",
+    foto:"fotos/rafaela.jpg" }
+];
+
+/* ---- OS ESQUETES ---- */
+const ESQUETES = [
+  { titulo:"Rafael", arte:"art-rafael", glifo:"estrada",
+    tag:"Nem todo companheiro de estrada é quem você pensa.",
+    classe:"Livre · leve um lenço", cor:"#2e8f52",
+    sinopse:"Uma caminhada, um encontro e a descoberta de que Deus manda companhia justamente quando a gente jura que está sozinho.",
+    genero:"Drama · Caminhada", duracao:"—" },
+
+  { titulo:"Life House", arte:"art-life", glifo:"maos", mudo:true,
+    tag:"Ele nunca soltou a mão. Nem quando ela soltou.",
+    classe:"12 anos · luta espiritual", cor:"#c9a227",
+    sinopse:"Sem uma única palavra. Só música, corpo e a disputa mais antiga do mundo: tudo o que quer te levar embora, contra Quem se recusa a te perder.",
+    genero:"Teatro mudo · Trilha", duracao:"—" },
+
+  { titulo:"Visita", arte:"art-visita", glifo:"porta",
+    tag:"Alguém bateu na porta que você trancou.",
+    classe:"Livre · vai chorar, aceite", cor:"#2e8f52",
+    sinopse:"Sobre o que a gente esconde, o que a gente tranca e o que acontece quando finalmente se abre.",
+    genero:"Drama", duracao:"—" },
+
+  { titulo:"Testemunhos", arte:"art-test", claro:true, glifo:"microfone",
+    tag:"Sem roteiro. Baseado em fatos reais.",
+    classe:"Sem censura · história real", cor:"#8a5f14",
+    sinopse:"Aqui ninguém está atuando. São histórias de verdade, contadas por quem viveu. É a parte do encontro em que o palco some.",
+    genero:"Documentário · Ao vivo", duracao:"—" },
+
+  { titulo:"Outros", arte:"art-outros", fita:true, glifo:"claquete",
+    tag:"Ainda em produção.",
+    classe:"Em breve", cor:"#6a6a74",
+    sinopse:"O JUPAC não para. Esquete novo, releitura, cena de última hora — o que vier, cabe aqui.",
+    genero:"Próxima produção", duracao:"—" }
+];
+
+/* ---- AS OUTRAS EQUIPES ---- */
+const EQUIPES = [
+  { nome:"Ordem",       dep:"Segurança de set",   icone:"escudo",
+    txt:"Sabe onde todo mundo tem que estar antes de todo mundo saber. Se o encontro flui, foi a Ordem." },
+  { nome:"LSI",         dep:"Luz, som e imagem",  icone:"luz",
+    txt:"Sem eles, o teatro é gente falando no escuro. Com eles, é cinema." },
+  { nome:"Capela",      dep:"Direção espiritual", icone:"vela",
+    txt:"Enquanto o palco acontece aqui, tem alguém segurando lá. O bastidor mais importante de todos." },
+  { nome:"Secretaria",  dep:"Produção executiva", icone:"prancheta",
+    txt:"Crachá, lista, ficha, prazo. A memória do encontro inteiro cabe naquela mesa." },
+  { nome:"Mini Mercado",dep:"Catering",           icone:"copo",
+    txt:"Onde o encontro recarrega. Provavelmente a equipe mais procurada do prédio inteiro." },
+  { nome:"E muito mais",dep:"Equipe completa",    icone:"pessoas",
+    txt:"Cozinha, música, acolhida, apoio… todo encontro é feito de gente que ninguém vê no palco." }
+];
+
+/* ---- GALERIA ----
+   Vazia = a seção some sozinha do site.
+   Para ligar: coloque as fotos em fotos/ e liste aqui.
+   Ex.:  const GALERIA = ["fotos/ensaio1.jpg","fotos/ensaio2.jpg"];        */
+const GALERIA = [];
+
+/* ---- ORAÇÃO DO GRUPO (troque pela de vocês) ---- */
+const ORACAO = "Senhor, faz de nós teatro: que o que a gente vive no palco seja verdade fora dele. Que ninguém veja a gente — que vejam Você.";
+</script>
+<!-- ╚═══════════════ fim do bloco editável ═══════════════╝ -->
+
+
+<!-- ══════════ ABERTURA ══════════ -->
+<div id="leader" role="button" tabindex="0" aria-label="Pular abertura">
+  <div class="leader-box">
+    <svg viewBox="0 0 200 200" aria-hidden="true">
+      <circle cx="100" cy="100" r="96" fill="none" stroke="#22222a" stroke-width="1.5"/>
+      <circle cx="100" cy="100" r="72" fill="none" stroke="#1a1a20" stroke-width="1"/>
+      <line x1="100" y1="4" x2="100" y2="196" stroke="#22222a" stroke-width="1"/>
+      <line x1="4" y1="100" x2="196" y2="100" stroke="#22222a" stroke-width="1"/>
+      <g class="leader-sweep">
+        <path d="M100 100 L100 4 A96 96 0 0 1 196 100 Z" fill="rgba(229,194,100,.09)"/>
+        <line x1="100" y1="100" x2="100" y2="4" stroke="#E5C264" stroke-width="1.5"/>
+      </g>
+    </svg>
+    <div class="leader-num"><span>3</span><span>2</span><span>1</span></div>
+  </div>
+  <p class="leader-skip">toque para pular</p>
+</div>
+
+
+<!-- ══════════ HERO ══════════ -->
+<header id="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-veu" aria-hidden="true"></div>
+  <div id="spot" aria-hidden="true"></div>
+
+  <div class="hero-cont">
+    <p class="selo-estudio"><i>✦</i> Jupac Pictures apresenta <i>✦</i></p>
+    <h1 class="marquise" id="logo-jupac">JU<span class="pisca">P</span>AC</h1>
+    <p class="hero-sig">Teatro · <b id="sig-extenso"></b></p>
+    <p class="hero-sig" id="sig-local"></p>
+
+    <p class="hero-frase">
+      A gente não decora falas.<br>A gente empresta o corpo pra uma história que já é de Deus.
+    </p>
+
+    <div class="hero-btns">
+      <a class="btn solido" href="#elenco">Ver o elenco</a>
+      <a class="btn" href="#cartaz">Em cartaz</a>
+    </div>
+  </div>
+  <p class="rolar">role</p>
+</header>
+
+
+<main>
+
+<!-- ══════════ ELENCO ══════════ -->
+<section id="elenco">
+  <div class="wrap">
+    <div class="rev">
+      <p class="eyebrow">Ficha técnica · 01</p>
+      <h2 class="sec">O <em>elenco</em></h2>
+      <p class="lead">Oito pessoas que, num sábado qualquer, resolveram que dava pra falar de Deus usando o corpo. Role devagar — cada um ganha cor quando chega a vez dele.</p>
+    </div>
+    <div class="grade-elenco" id="grade-elenco"></div>
+  </div>
+</section>
+
+
+<!-- ══════════ EM CARTAZ ══════════ -->
+<section id="cartaz">
+  <div class="wrap">
+    <div class="rev">
+      <p class="eyebrow">Ficha técnica · 02</p>
+      <h2 class="sec">Em <em>cartaz</em></h2>
+      <p class="lead">As produções do JUPAC. Cada uma com um jeito diferente de dizer a mesma coisa.</p>
+      <p class="dica-arrasta">← arraste para o lado</p>
+    </div>
+  </div>
+  <div class="wrap"><div class="trilho" id="trilho-posters"></div></div>
+</section>
+
+
+<!-- ══════════ BASTIDORES ══════════ -->
+<section id="bastidores">
+  <div class="wrap">
+    <div class="rev">
+      <p class="eyebrow">Ficha técnica · 03</p>
+      <h2 class="sec">Os <em>bastidores</em></h2>
+      <p class="lead">Teatro é a parte que aparece. Mas nenhum encontro se sustenta em cima de um palco só — tem gente segurando cada canto do prédio.</p>
+    </div>
+    <div class="grade-eq" id="grade-eq"></div>
+    <p class="versiculo rev">“Um corpo, muitos membros.”<span>1 Coríntios 12, 12</span></p>
+  </div>
+</section>
+
+
+<!-- ══════════ GALERIA ══════════ -->
+<section id="galeria" hidden>
+  <div class="wrap">
+    <div class="rev">
+      <p class="eyebrow">Ficha técnica · 04</p>
+      <h2 class="sec">O <em>rolo</em></h2>
+      <p class="lead">Bastidor, ensaio, bagunça e figurino torto.</p>
+    </div>
+  </div>
+  <div class="rolo"><div class="rolo-trilho" id="rolo-trilho"></div></div>
+</section>
+
+
+<!-- ══════════ CRÉDITOS + ORAÇÃO ══════════ -->
+<section id="creditos">
+  <div class="wrap">
+    <div class="cred-bloco rev">
+      <p class="cred-estudio">Jupac Pictures</p>
+      <p class="cred-sub">apresentou</p>
+
+      <div class="cred-grupo">
+        <p class="cred-rot">Elenco</p>
+        <p class="cred-nomes" id="cred-nomes"></p>
+      </div>
+
+      <div class="cred-grupo">
+        <p class="cred-rot">Direção</p>
+        <p class="cred-nomes">Espírito Santo</p>
+      </div>
+
+      <div class="cred-div"></div>
+
+      <p class="oracao" id="oracao-txt"></p>
+      <p class="oracao"><b>Amém</b></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ══════════ RODAPÉ ══════════ -->
+<footer>
+  <div class="wrap">
+    <p class="rp-logo">JUPAC</p>
+    <p class="rp-nome" id="rp-extenso"></p>
+    <div class="rp-linhas">
+      <p>⛪ <strong id="rp-paroquia"></strong></p>
+      <p>📍 <span id="rp-cidade"></span></p>
+      <p>📆 <strong id="rp-encontro"></strong></p>
+    </div>
+    <a class="rp-insta" id="rp-insta" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r=".6" fill="currentColor" stroke="none"/>
+      </svg>
+      <span id="rp-arroba"></span>
+    </a>
+    <p class="rp-fim">
+      JUPAC · Paróquia Menino Jesus de Praga<br>
+      São José do Rio Preto · SP
+    </p>
+  </div>
+</footer>
+
+
+<dialog class="ficha" id="modal">
+  <div class="ficha-in">
+    <button class="ficha-fechar" id="modal-x" aria-label="Fechar">×</button>
+    <div id="modal-corpo"></div>
+  </div>
+</dialog>
+
+
+<script>
+/* ══════════════════════════════════════════════════════════════
+   JAVASCRIPT — nada aqui precisa ser editado
+   ══════════════════════════════════════════════════════════════ */
+(function(){
+"use strict";
+const $ = s => document.querySelector(s);
+/* celular antigo pode não ter matchMedia — nesse caso o site abre sem os
+   efeitos, mas nunca fica em branco */
+const mq = q => (window.matchMedia ? window.matchMedia(q) : { matches:false });
+const semMovimento = mq('(prefers-reduced-motion: reduce)').matches;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- ícones SVG ---------- */
+const GLIFOS = {
+  estrada:'<path d="M32 4 L26 60 M32 4 L38 60"/><path d="M32 16 v8 M32 32 v8 M32 48 v8"/><circle cx="48" cy="14" r="5"/>',
+  maos:   '<path d="M18 44 C18 30 24 22 32 22 C40 22 46 30 46 44"/><path d="M24 44 v10 M40 44 v10"/><path d="M26 30 L32 24 L38 30"/>',
+  porta:  '<rect x="18" y="10" width="28" height="46" rx="1"/><circle cx="39" cy="34" r="2"/><path d="M18 10 L46 10"/>',
+  microfone:'<rect x="26" y="10" width="12" height="26" rx="6"/><path d="M20 32 a12 12 0 0 0 24 0"/><path d="M32 44 v10 M24 54 h16"/>',
+  claquete:'<rect x="10" y="26" width="44" height="28" rx="2"/><path d="M10 26 L16 12 L58 18 L54 30"/><path d="M22 14 L18 27 M32 16 L28 28 M42 17 L38 29"/>'
+};
+const ICONES_EQ = {
+  escudo:   '<path d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5v-6L12 2.5Z"/>',
+  luz:      '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5.9 1.2.9 1.9V16h5.4v-.3c0-.7.3-1.4.9-1.9A6 6 0 0 0 12 3Z"/>',
+  vela:     '<path d="M12 2.5s2.2 2.1 2.2 3.6a2.2 2.2 0 1 1-4.4 0C9.8 4.6 12 2.5 12 2.5Z"/><rect x="8.5" y="9.5" width="7" height="12" rx="1.4"/>',
+  prancheta:'<rect x="4.5" y="3.5" width="15" height="17.5" rx="2"/><path d="M9 3.5V2.2h6v1.3"/><path d="M8.5 10h7M8.5 14h7M8.5 17.5h4"/>',
+  copo:     '<path d="M6 4.5h12l-1.2 15a2 2 0 0 1-2 1.9H9.2a2 2 0 0 1-2-1.9L6 4.5Z"/><path d="M6.6 10h10.8"/>',
+  pessoas:  '<circle cx="8.5" cy="8" r="3"/><circle cx="16.5" cy="9.5" r="2.4"/><path d="M3 20c0-3 2.5-5.2 5.5-5.2S14 17 14 20"/><path d="M15 14.9c2.6 0 4.5 1.9 4.5 4.3"/>'
+};
+
+/* ---------- textos vindos do bloco editável ---------- */
+$('#sig-extenso').textContent = INFO.extenso;
+$('#sig-local').textContent   = INFO.paroquia + ' · ' + INFO.cidade;
+$('#rp-extenso').textContent  = INFO.extenso;
+$('#rp-paroquia').textContent = INFO.paroquia;
+$('#rp-cidade').textContent   = INFO.cidade;
+$('#rp-encontro').textContent = INFO.encontro;
+$('#rp-arroba').textContent   = INFO.arroba;
+$('#rp-insta').href           = INFO.instagram;
+$('#oracao-txt').textContent  = ORACAO;
+document.title = INFO.sigla + ' Pictures · Teatro — ' + INFO.paroquia;
+
+/* ---------- ELENCO ---------- */
+$('#grade-elenco').innerHTML = ELENCO.map((p,i) => `
+  <button class="ator rev" data-ator="${i}" style="transition-delay:${Math.min(i*55,400)}ms">
+    <div class="ator-foto">
+      <span class="ator-num">Elenco · ${String(i+1).padStart(2,'0')}</span>
+      <img src="${esc(p.foto)}" alt="Retrato de ${esc(p.nome)}" loading="lazy" width="512" height="640"
+           onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'sem-foto',textContent:'${esc(p.nome).split(' ').map(w=>w[0]).slice(0,2).join('')}'}))">
+    </div>
+    <div class="ator-info">
+      <p class="ator-nome">${esc(p.nome)}</p>
+      <p class="ator-funcao ${p.coord?'coord':''}">${esc(p.funcao)}</p>
+      <p class="ator-frase">“${esc(p.frase)}”<b>${esc(p.autor)}</b></p>
+    </div>
+  </button>`).join('');
+
+/* ---------- PÔSTERES ---------- */
+$('#trilho-posters').innerHTML = ESQUETES.map((e,i) => `
+  <button class="poster rev ${e.claro?'claro':''}" data-esq="${i}" style="transition-delay:${Math.min(i*70,400)}ms">
+    <div class="poster-art ${e.arte}"></div>
+    ${e.fita?'<span class="fita"></span>':''}
+    <span class="poster-num">Prod. ${String(i+1).padStart(2,'0')}</span>
+    ${e.mudo?'<span class="selo-mudo">sem diálogos</span>':''}
+    <svg class="poster-glifo" viewBox="0 0 64 64" fill="none"
+         stroke="${e.claro?'rgba(30,28,22,.55)':'rgba(255,255,255,.55)'}"
+         stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      ${GLIFOS[e.glifo]||''}
+    </svg>
+    <div class="poster-corpo">
+      <p class="poster-titulo">${esc(e.titulo)}</p>
+      <p class="poster-tag">${esc(e.tag)}</p>
+      <p class="class-ind"><i style="background:${e.cor}"></i>${esc(e.classe)}</p>
+      <p class="poster-ver">ver sinopse →</p>
+    </div>
+  </button>`).join('');
+
+/* ---------- EQUIPES ---------- */
+$('#grade-eq').innerHTML = EQUIPES.map((q,i) => `
+  <article class="eq rev" style="transition-delay:${Math.min(i*60,400)}ms">
+    <svg viewBox="0 0 24 24" aria-hidden="true">${ICONES_EQ[q.icone]||''}</svg>
+    <h3 class="eq-nome">${esc(q.nome)}</h3>
+    <p class="eq-dep">${esc(q.dep)}</p>
+    <p class="eq-txt">${esc(q.txt)}</p>
+  </article>`).join('');
+
+/* ---------- CRÉDITOS ---------- */
+$('#cred-nomes').innerHTML = ELENCO.map(p => esc(p.nome)).join(' · ')
+  .replace(/((?:[^·]*·){2}[^·]*)·/g,'$1<br>');
+
+/* ---------- GALERIA (some se estiver vazia) ---------- */
+if (Array.isArray(GALERIA) && GALERIA.length){
+  $('#galeria').hidden = false;
+  $('#rolo-trilho').innerHTML = GALERIA.map((f,i) =>
+    `<img src="${esc(f)}" alt="Bastidores do JUPAC ${i+1}" loading="lazy">`).join('');
+}
+
+/* ══════════════════════════════════════════════════════════════
+   COR REVELANDO CONFORME ROLA
+   No celular não existe hover, então quem "acende" a foto é a
+   rolagem: quanto mais perto do meio da tela, mais colorida ela
+   fica. É como um holofote descendo pela lista.
+   ══════════════════════════════════════════════════════════════ */
+(function corNoScroll(){
+  const alvos = Array.from(document.querySelectorAll('.ator-foto img, .rolo-trilho img'));
+  if (!alvos.length) return;
+
+  // movimento reduzido: mostra tudo colorido e não mexe mais
+  if (semMovimento){
+    alvos.forEach(el => el.style.setProperty('--cor','1'));
+    return;
+  }
+
+  let agendado = false;
+
+  function calcular(){
+    agendado = false;
+    const alt   = window.innerHeight;
+    const meio  = alt / 2;
+    /* Quer o efeito mais forte? diminua o plato (ex.: 0.12)
+       Quer mais suave? aumente (ex.: 0.28) */
+    const plato = alt * 0.18;   // zona central: cor cheia
+    const fim   = alt * 0.48;   // além disso: preto e branco
+
+    for (const el of alvos){
+      const r = el.getBoundingClientRect();
+      if (!r.height) continue;
+      if (r.bottom < -120 || r.top > alt + 120) continue;   // fora da tela, ignora
+
+      const dist = Math.abs((r.top + r.height / 2) - meio);
+      let v = dist <= plato ? 1 : 1 - (dist - plato) / (fim - plato);
+      v = v < 0 ? 0 : v > 1 ? 1 : v;
+      v = Math.round(v * 20) / 20;                          // passos de 0,05
+
+      if (el._cor !== v){
+        el._cor = v;
+        el.style.setProperty('--cor', v);
+        const card = el.closest('.ator');
+        if (card) card.classList.toggle('foco', v > 0.9);
+      }
+    }
+  }
+
+  function agendar(){
+    if (!agendado){ agendado = true; requestAnimationFrame(calcular); }
+  }
+
+  addEventListener('scroll', agendar, { passive:true });
+  addEventListener('resize', agendar);
+  window.addEventListener('load', agendar);
+  calcular();
+  setTimeout(calcular, 350);   // depois que as fontes e imagens assentam
+})();
+
+/* ---------- MODAL ---------- */
+const modal = $('#modal'), corpo = $('#modal-corpo');
+function abrir(html){
+  corpo.innerHTML = html;
+  if (modal.showModal) modal.showModal(); else modal.setAttribute('open','');
+}
+$('#modal-x').addEventListener('click', () => modal.close());
+modal.addEventListener('click', ev => { if (ev.target === modal) modal.close(); });
+
+document.addEventListener('click', ev => {
+  const cardAtor = ev.target.closest('[data-ator]');
+  if (cardAtor){
+    const p = ELENCO[+cardAtor.dataset.ator];
+    const emCena = ESQUETES.filter(e => (e.elenco||[]).includes(p.nome)).map(e => e.titulo);
+    abrir(`
+      <p class="ficha-kicker">Ficha do elenco</p>
+      <h3 class="ficha-titulo">${esc(p.nome)}</h3>
+      <p class="ficha-sinopse">“${esc(p.frase)}”</p>
+      <dl class="ficha-linhas">
+        <div><dt>Função</dt><dd>${esc(p.funcao)}</dd></div>
+        <div><dt>Citação de</dt><dd>${esc(p.autor)}</dd></div>
+        <div><dt>Grupo</dt><dd>${esc(INFO.sigla)} — ${esc(INFO.extenso)}</dd></div>
+        ${emCena.length?`<div><dt>Em cena</dt><dd>${emCena.map(esc).join(', ')}</dd></div>`:''}
+      </dl>`);
+    return;
+  }
+  const cardEsq = ev.target.closest('[data-esq]');
+  if (cardEsq){
+    const e = ESQUETES[+cardEsq.dataset.esq];
+    abrir(`
+      <p class="ficha-kicker">Em cartaz</p>
+      <h3 class="ficha-titulo">${esc(e.titulo)}</h3>
+      <p class="ficha-sinopse">${esc(e.sinopse)}</p>
+      <dl class="ficha-linhas">
+        <div><dt>Gênero</dt><dd>${esc(e.genero)}</dd></div>
+        <div><dt>Classificação</dt><dd>${esc(e.classe)}</dd></div>
+        ${e.elenco?`<div><dt>Elenco</dt><dd>${e.elenco.map(esc).join(', ')}</dd></div>`:''}
+        <div><dt>Produção</dt><dd>${esc(INFO.sigla)} Pictures</dd></div>
+      </dl>`);
+  }
+});
+
+/* ---------- revelar ao rolar ---------- */
+if ('IntersectionObserver' in window && !semMovimento){
+  const io = new IntersectionObserver(entradas => {
+    entradas.forEach(e => { if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold:.12, rootMargin:'0px 0px -8% 0px' });
+  document.querySelectorAll('.rev').forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll('.rev').forEach(el => el.classList.add('on'));
+}
+
+/* ---------- holofote no hero ---------- */
+if (!semMovimento && mq('(pointer:fine)').matches){
+  const hero = $('#hero'), spot = $('#spot');
+  hero.addEventListener('pointermove', ev => {
+    const r = hero.getBoundingClientRect();
+    spot.style.setProperty('--mx', ((ev.clientX-r.left)/r.width*100)+'%');
+    spot.style.setProperty('--my', ((ev.clientY-r.top)/r.height*100)+'%');
+  });
+}
+
+/* ---------- inclinação 3D nos cards (só no computador) ---------- */
+if (!semMovimento && mq('(pointer:fine)').matches){
+  document.querySelectorAll('.ator, .poster').forEach(card => {
+    card.addEventListener('pointermove', ev => {
+      const r = card.getBoundingClientRect();
+      const px = (ev.clientX-r.left)/r.width - .5, py = (ev.clientY-r.top)/r.height - .5;
+      card.style.transform = `perspective(900px) rotateX(${-py*5}deg) rotateY(${px*6}deg) translateY(-6px)`;
+    });
+    card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+  });
+}
+
+/* ---------- abertura ---------- */
+const leader = $('#leader');
+function fecharLeader(){
+  if (!leader || leader.dataset.fim) return;
+  leader.dataset.fim = '1';
+  leader.classList.add('sai');
+  setTimeout(() => leader.remove(), 600);
+}
+if (semMovimento){ leader && leader.remove(); }
+else {
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => { fecharLeader(); document.body.style.overflow = ''; }, 1900);
+  leader.addEventListener('click', () => { fecharLeader(); document.body.style.overflow = ''; });
+  leader.addEventListener('keydown', ev => {
+    if (ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Escape'){
+      fecharLeader(); document.body.style.overflow = '';
+    }
+  });
+}
+
+/* ---------- easter egg: 5 toques no logo ---------- */
+let toques = 0, ultimo = 0;
+$('#logo-jupac').addEventListener('click', () => {
+  const agora = Date.now();
+  toques = (agora - ultimo < 900) ? toques+1 : 1;
+  ultimo = agora;
+  if (toques >= 5){
+    toques = 0;
+    document.querySelectorAll('.marquise, .cred-estudio, .rp-logo').forEach(el => {
+      el.animate(
+        [{filter:'brightness(1)'},{filter:'brightness(2.6)'},{filter:'brightness(1)'}],
+        {duration:900, iterations:2}
+      );
+    });
+  }
+});
+
+})();
+</script>
+</body>
+</html>
