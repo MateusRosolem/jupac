@@ -3,10 +3,13 @@
 ## O que veio na pasta
 
 ```
-index.html      ← o site inteiro (HTML + CSS + JS num arquivo só)
+index.html      ← o site principal (HTML + CSS + JS num arquivo só)
+terco.html      ← página separada, só com o guia do terço
 fotos/          ← as 9 imagens já cortadas e comprimidas
 LEIA-ME.md      ← este arquivo
 ```
+
+**Importante:** ao subir o site (Vercel, GitHub Pages etc.), suba os dois arquivos `.html` juntos com a pasta `fotos/` — o botão "Abrir o guia do terço" do site principal depende do `terco.html` estar do lado dele.
 
 Site inteiro com fotos: **~560 KB**. Abre em menos de 1 segundo no 4G.
 Para testar agora: dê dois cliques no `index.html`.
@@ -43,12 +46,33 @@ frase:"Minha vocação é o amor.",  autor:"Santa Teresinha do Menino Jesus",
 `funcao:"Ator"` · `"Atriz"` · `"Coordenação"`
 Quem tem `coord:true` na linha ganha a etiqueta em vermelho. Se mudar de coordenador para ator, apague o `coord:true,`.
 
-### Adicionar um esquete novo
+### Trocar os horários (agenda da semana)
 
-Copie um bloco inteiro de `ESQUETES` (de `{` até `},`), cole embaixo e troque os textos. O layout se ajusta sozinho.
+No `index.html`, bloco `AGENDA`:
 
-Artes disponíveis: `art-rafael` (azul), `art-life` (vermelho), `art-visita` (âmbar), `art-test` (papel claro — use junto com `claro:true`), `art-outros` (listrado).
-Glifos disponíveis: `estrada`, `maos`, `porta`, `microfone`, `claquete`.
+```js
+const AGENDA = [
+  { emoji:"🙏", evento:"Terço",        quando:"Sexta-feira, à noite" },
+  { emoji:"🤝", evento:"Pós-encontro", quando:"Sexta-feira, às 17h" },
+  { emoji:"🎬", evento:"Encontro",     quando:"Sábado, às 17h" }
+];
+```
+
+Essa lista aparece na faixa logo abaixo do topo e de novo no rodapé — muda em um lugar só. Pode adicionar ou remover linhas se a agenda mudar.
+
+### Trocar as orações de quem tá começando
+
+Bloco `ORACOES_INICIANTES`, no `index.html`. Cada uma tem `titulo` e `texto` — copie um bloco inteiro (de `{` até `},`) pra adicionar uma oração nova.
+
+### Editar o passo a passo do terço
+
+Isso agora fica em **`terco.html`** (página separada, pro site principal não ficar comprido). Abra esse arquivo e procure `⭐ EDITE AQUI ⭐` lá dentro.
+
+Bloco `TERCO_PASSOS` — cada linha é um passo, na ordem em que aparece na tela. Bloco `MISTERIOS` — quem tem `destaque:true` ganha a borda dourada (hoje é sexta → Dolorosos). Bloco `TERCO_QUANDO` — o texto do horário do terço em grupo. Se o dia do terço mudar, ajuste os três: `TERCO_QUANDO` aqui, o `destaque:true` de `MISTERIOS` aqui, e a linha do "Terço" em `AGENDA` no `index.html`.
+
+### Trocar as equipes (do encontro e de fora)
+
+Dois blocos no `index.html`: `EQUIPES` (as que atuam no dia do encontro — Ordem, Luz, Capela, Secretaria, Música, Recepção, Cozinha, Coordenação) e `EQUIPES_FORA` (as que atuam durante a semana — Social, Liturgia, Mídia). Cada uma tem `nome`, `dep` (a linha pequena embaixo do nome) e `txt`. Ícone é o campo `icone` — os disponíveis estão listados em `ICONES_EQ` no JS, mais abaixo no arquivo.
 
 ### Ligar a galeria de fotos
 

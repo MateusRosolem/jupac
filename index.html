@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>JUPAC Pictures · Teatro — Paróquia Menino Jesus de Praga</title>
-<meta name="description" content="JUPAC — Jovens Unidos Pelo Amor de Cristo. Grupo de teatro da Paróquia Menino Jesus de Praga, São José do Rio Preto. Todo sábado, às 17h.">
+<meta name="description" content="JUPAC — Jovens Unidos Pelo Amor de Cristo. Grupo de teatro da Paróquia Menino Jesus de Praga, São José do Rio Preto. Terço e pós-encontro toda sexta · Encontro todo sábado, 17h.">
 <meta name="theme-color" content="#0A0A0C">
 
 
 <!-- ===== prévia bonita no WhatsApp / Instagram ===== -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="JUPAC Pictures · Teatro">
-<meta property="og:description" content="Jovens Unidos Pelo Amor de Cristo — Paróquia Menino Jesus de Praga · São José do Rio Preto. Todo sábado, às 17h.">
+<meta property="og:description" content="Jovens Unidos Pelo Amor de Cristo — Paróquia Menino Jesus de Praga · São José do Rio Preto. Terço e pós-encontro toda sexta · Encontro todo sábado, 17h.">
 <meta property="og:image" content="fotos/elenco-hollywood.jpg">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
@@ -253,90 +253,46 @@ section{padding:clamp(70px,11vw,130px) 0;position:relative}
 .ator-frase b{display:block;font-weight:600;color:#b9b9c2;font-size:.66rem;
   letter-spacing:.1em;text-transform:uppercase;margin-top:7px;font-family:var(--mono)}
 
-/* ══════ EM CARTAZ ══════ */
-.trilho{
-  display:grid;grid-auto-flow:column;grid-auto-columns:76%;gap:14px;
-  overflow-x:auto;scroll-snap-type:x mandatory;margin-top:44px;
-  padding:4px 22px 22px;margin-inline:-22px;
-  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+/* ══════ AGENDA (topo) ══════ */
+.agenda-topo{background:#0d0d10;border-block:1px solid #1c1c22;padding-block:clamp(40px,7vw,60px)}
+.agenda-grade{display:grid;grid-template-columns:1fr;gap:36px;text-align:center}
+@media(min-width:700px){
+  .agenda-grade{grid-template-columns:repeat(2,1fr)}
+  .agenda-item{border-left:1px solid #1c1c22}
+  .agenda-item:first-child{border-left:none}
 }
-.trilho::-webkit-scrollbar{display:none}
-@media(min-width:640px){.trilho{grid-auto-columns:44%}}
-@media(min-width:980px){
-  .trilho{grid-auto-flow:row;grid-template-columns:repeat(5,1fr);overflow:visible;
-    padding-inline:0;margin-inline:0;gap:18px}
+.agenda-item .agenda-emoji{font-size:clamp(2.2rem,6vw,2.8rem);display:block}
+.agenda-item .agenda-evento{
+  font-family:var(--disp);font-size:clamp(1.8rem,6vw,2.6rem);text-transform:uppercase;color:var(--ouro);
+  margin-top:12px;letter-spacing:.01em;line-height:1;
 }
-.poster{
-  scroll-snap-align:center;position:relative;aspect-ratio:2/3;border-radius:3px;
-  overflow:hidden;border:1px solid #2a2a32;display:flex;flex-direction:column;
-  justify-content:flex-end;padding:18px 16px;text-align:left;
-  transition:transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s,border-color .4s;
+.agenda-item .agenda-quando{
+  font-family:var(--mono);font-size:clamp(.78rem,2.2vw,.92rem);letter-spacing:.04em;text-transform:uppercase;
+  color:var(--creme);margin-top:12px;max-width:34ch;margin-inline:auto;line-height:1.5;
 }
-.poster:hover,.poster:focus-visible{
-  transform:translateY(-8px);border-color:var(--ouro-esc);
-  box-shadow:0 26px 54px rgba(0,0,0,.65);
+.agenda-nota{
+  margin-top:34px;text-align:center;font-family:var(--mono);font-size:.66rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--cinza);
 }
-.poster-art{position:absolute;inset:0;z-index:0}
-.poster-art::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 30%,rgba(6,6,8,.86) 78%,rgba(6,6,8,.96) 100%);
-}
-/* artes por esquete */
-.art-rafael{background:radial-gradient(circle at 50% 22%,#1d4b56,#0d2028 55%,#070d11)}
-.art-life{background:radial-gradient(circle at 50% 28%,#7a1f1c,#2a0b0a 58%,#0a0405)}
-.art-visita{background:radial-gradient(circle at 50% 26%,#8a5a1c,#3a2308 58%,#0d0803)}
-.art-test{background:linear-gradient(170deg,#d8d2c2,#b5ae9c 60%,#8f8878)}
-.art-outros{background:repeating-linear-gradient(45deg,#141419,#141419 12px,#191920 12px,#191920 24px)}
 
-.poster-glifo{
-  position:absolute;left:50%;top:34%;transform:translate(-50%,-50%);
-  width:56%;opacity:.42;z-index:1;
+/* ══════ ORAÇÕES PARA QUEM ESTÁ COMEÇANDO ══════ */
+.oracoes-lista{margin-top:36px;display:grid;gap:16px}
+@media(min-width:760px){.oracoes-lista{grid-template-columns:repeat(2,1fr)}}
+.oracao-card{
+  background:var(--carvao);border:1px solid #26262d;border-radius:3px;padding:22px 20px;
+  transition:border-color .3s;
 }
-.poster-corpo{position:relative;z-index:2}
-.poster-num{
-  position:absolute;top:14px;left:14px;z-index:3;font-family:var(--mono);
-  font-size:.58rem;letter-spacing:.2em;color:rgba(255,255,255,.75);
+.oracao-card:hover{border-color:var(--ouro-esc)}
+.oracao-card h3{
+  font-family:var(--disp);font-size:1.3rem;text-transform:uppercase;color:var(--ouro);
+  margin-bottom:12px;letter-spacing:.01em;
 }
-.poster.claro .poster-num{color:rgba(0,0,0,.55)}
-.poster-titulo{
-  font-family:var(--disp);text-transform:uppercase;line-height:.9;
-  font-size:clamp(1.5rem,6.4vw,2rem);letter-spacing:.01em;
+.oracao-card p{font-size:.9rem;color:var(--creme);line-height:1.65;font-style:italic}
+.oracao-cta{
+  margin-top:40px;border:1px solid var(--ouro-esc);border-radius:3px;padding:28px 22px;
+  text-align:center;background:rgba(229,194,100,.05);
 }
-@media(min-width:980px){.poster-titulo{font-size:1.65rem}}
-.poster.claro .poster-titulo{color:#1b1a16}
-.poster-tag{
-  font-size:.76rem;line-height:1.4;margin-top:9px;color:rgba(242,238,228,.82);
-  font-style:italic;
-}
-.poster.claro .poster-tag{color:rgba(20,18,14,.78)}
-.poster.claro .poster-art::after{background:linear-gradient(180deg,transparent 34%,rgba(216,210,194,.9) 76%)}
-.class-ind{
-  display:inline-flex;align-items:center;gap:7px;margin-top:14px;
-  font-family:var(--mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(242,238,228,.72);
-}
-.poster.claro .class-ind{color:rgba(20,18,14,.7)}
-.class-ind i{width:14px;height:14px;border-radius:2px;display:block;flex:none}
-.poster-ver{
-  margin-top:14px;font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--ouro);display:flex;align-items:center;gap:6px;
-}
-.poster.claro .poster-ver{color:#8a5f14}
-.selo-mudo{
-  position:absolute;top:14px;right:14px;z-index:3;
-  font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;
-  border:1px solid rgba(255,255,255,.4);color:rgba(255,255,255,.8);padding:3px 6px;border-radius:2px;
-}
-.fita{
-  position:absolute;top:26px;left:-24px;z-index:3;width:120px;height:26px;
-  background:rgba(226,214,178,.28);transform:rotate(-32deg);
-  border-top:1px dashed rgba(255,255,255,.18);border-bottom:1px dashed rgba(255,255,255,.18);
-}
-.dica-arrasta{
-  font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--cinza);
-  text-transform:uppercase;margin-top:8px;display:flex;align-items:center;gap:8px;
-}
-@media(min-width:980px){.dica-arrasta{display:none}}
+.oracao-cta p{color:var(--cinza);font-size:.9rem;margin-bottom:18px;max-width:46ch;margin-inline:auto}
 
 /* ══════ MODAL ══════ */
 dialog.ficha{
@@ -433,6 +389,7 @@ footer{background:var(--preto);border-top:1px solid #1c1c22;padding-block:56px;t
   color:var(--creme);margin-top:10px}
 .rp-linhas{margin-top:26px;display:grid;gap:9px;font-size:.86rem;color:var(--cinza)}
 .rp-linhas strong{color:var(--creme);font-weight:600}
+#rp-agenda{display:grid;gap:9px}
 .rp-insta{
   display:inline-flex;align-items:center;gap:10px;margin-top:30px;
   padding:14px 26px;border:1px solid var(--ouro-esc);border-radius:2px;min-height:48px;
@@ -474,10 +431,15 @@ const INFO = {
   extenso:   "Jovens Unidos Pelo Amor de Cristo",
   paroquia:  "Paróquia Menino Jesus de Praga",
   cidade:    "São José do Rio Preto — SP",
-  encontro:  "Todo sábado, às 17 horas",
   instagram: "https://www.instagram.com/jupacmjp/",
   arroba:    "@jupacmjp"
 };
+
+/* ---- AGENDA — os encontros fixos da semana ---- */
+const AGENDA = [
+  { emoji:"🙏", evento:"Terço",        quando:"Toda sexta-feira, às 19h30, na casa de alguém do grupo" },
+  { emoji:"🤝", evento:"Pós-encontro", quando:"Todo sábado, às 17h, na Menino Jesus de Praga" }
+];
 
 /* ---- OS 8 DO ELENCO ----
    funcao: "Ator" / "Atriz" / "Coordenação"
@@ -516,53 +478,53 @@ const ELENCO = [
     foto:"fotos/rafaela.jpg" }
 ];
 
-/* ---- OS ESQUETES ---- */
-const ESQUETES = [
-  { titulo:"Rafael", arte:"art-rafael", glifo:"estrada",
-    tag:"Nem todo companheiro de estrada é quem você pensa.",
-    classe:"Livre · leve um lenço", cor:"#2e8f52",
-    sinopse:"Uma caminhada, um encontro e a descoberta de que Deus manda companhia justamente quando a gente jura que está sozinho.",
-    genero:"Drama · Caminhada", duracao:"—" },
+/* ---- ORAÇÕES PARA QUEM ESTÁ COMEÇANDO ----
+   As 4 orações mais básicas — pra quem nunca rezou. */
+const ORACOES_INICIANTES = [
+  { titulo:"Pai Nosso",
+    texto:"Pai Nosso que estais nos Céus, santificado seja o Vosso Nome, venha a nós o Vosso Reino, seja feita a Vossa vontade, assim na terra como no Céu. O pão nosso de cada dia nos dai hoje, perdoai as nossas ofensas, assim como nós perdoamos a quem nos tem ofendido, e não nos deixeis cair em tentação, mas livrai-nos do mal. Amém." },
 
-  { titulo:"Life House", arte:"art-life", glifo:"maos", mudo:true,
-    tag:"Ele nunca soltou a mão. Nem quando ela soltou.",
-    classe:"12 anos · luta espiritual", cor:"#c9a227",
-    sinopse:"Sem uma única palavra. Só música, corpo e a disputa mais antiga do mundo: tudo o que quer te levar embora, contra Quem se recusa a te perder.",
-    genero:"Teatro mudo · Trilha", duracao:"—" },
+  { titulo:"Ave Maria",
+    texto:"Ave Maria, cheia de graça, o Senhor é convosco, bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós pecadores, agora e na hora da nossa morte. Amém." },
 
-  { titulo:"Visita", arte:"art-visita", glifo:"porta",
-    tag:"Alguém bateu na porta que você trancou.",
-    classe:"Livre · vai chorar, aceite", cor:"#2e8f52",
-    sinopse:"Sobre o que a gente esconde, o que a gente tranca e o que acontece quando finalmente se abre.",
-    genero:"Drama", duracao:"—" },
+  { titulo:"Anjo da Guarda",
+    texto:"Santo Anjo do Senhor, meu zeloso guardador, se a ti me confiou a piedade divina, sempre me rege, me guarda, me governa e me ilumina. Amém." },
 
-  { titulo:"Testemunhos", arte:"art-test", claro:true, glifo:"microfone",
-    tag:"Sem roteiro. Baseado em fatos reais.",
-    classe:"Sem censura · história real", cor:"#8a5f14",
-    sinopse:"Aqui ninguém está atuando. São histórias de verdade, contadas por quem viveu. É a parte do encontro em que o palco some.",
-    genero:"Documentário · Ao vivo", duracao:"—" },
-
-  { titulo:"Outros", arte:"art-outros", fita:true, glifo:"claquete",
-    tag:"Ainda em produção.",
-    classe:"Em breve", cor:"#6a6a74",
-    sinopse:"O JUPAC não para. Esquete novo, releitura, cena de última hora — o que vier, cabe aqui.",
-    genero:"Próxima produção", duracao:"—" }
+  { titulo:"São Bento (proteção)",
+    texto:"Que a Cruz Sagrada seja a minha luz, e o dragão nunca seja o meu guia. Afasta-te, Satanás! Nunca me aconselhes coisas vãs. É mau o que me ofereces; bebe tu mesmo do teu veneno. Amém." }
 ];
 
-/* ---- AS OUTRAS EQUIPES ---- */
+/* ---- EQUIPES DO ENCONTRO ---- */
 const EQUIPES = [
-  { nome:"Ordem",       dep:"Segurança de set",   icone:"escudo",
-    txt:"Sabe onde todo mundo tem que estar antes de todo mundo saber. Se o encontro flui, foi a Ordem." },
-  { nome:"LSI",         dep:"Luz, som e imagem",  icone:"luz",
-    txt:"Sem eles, o teatro é gente falando no escuro. Com eles, é cinema." },
-  { nome:"Capela",      dep:"Direção espiritual", icone:"vela",
-    txt:"Enquanto o palco acontece aqui, tem alguém segurando lá. O bastidor mais importante de todos." },
-  { nome:"Secretaria",  dep:"Produção executiva", icone:"prancheta",
-    txt:"Crachá, lista, ficha, prazo. A memória do encontro inteiro cabe naquela mesa." },
-  { nome:"Mini Mercado",dep:"Catering",           icone:"copo",
-    txt:"Onde o encontro recarrega. Provavelmente a equipe mais procurada do prédio inteiro." },
-  { nome:"E muito mais",dep:"Equipe completa",    icone:"pessoas",
-    txt:"Cozinha, música, acolhida, apoio… todo encontro é feito de gente que ninguém vê no palco." }
+  { nome:"Ordem",      dep:"Limpeza",            icone:"vassoura",
+    txt:"Deixa o espaço em ordem antes, durante e depois do encontro. Sem eles, ninguém tem onde sentar." },
+  { nome:"Luz",        dep:"Imagem e áudio",     icone:"camera",
+    txt:"Registra e posta todas as fotos do encontro, e cuida do áudio. O que fica de lembrança passa pela Luz." },
+  { nome:"Capela",     dep:"Intercessão",        icone:"vela",
+    txt:"Ora sem parar enquanto o encontro acontece, e chama todo mundo pras vigílias. O bastidor mais importante." },
+  { nome:"Secretaria", dep:"Produção executiva", icone:"prancheta",
+    txt:"Crachá, ficha, prazo. A memória do encontro inteiro cabe naquela mesa." },
+  { nome:"Música",     dep:"Louvor",             icone:"nota",
+    txt:"Toca e canta as músicas do encontro." },
+  { nome:"Recepção",   dep:"Acolhida",           icone:"porta",
+    txt:"Recebe todo mundo na entrada e cuida da saída. É o primeiro rosto que você vê ao chegar." },
+  { nome:"Cozinha",    dep:"Alimentação",        icone:"talher",
+    txt:"Prepara todas as comidas gostosas do encontro." },
+  { nome:"Coordenação",dep:"Enzo e Bruna",       icone:"coroa",
+    txt:"Estão à frente do encontro, cuidando de tudo pra que aconteça." }
+];
+
+/* ---- EQUIPES DO JUPAC FORA DO ENCONTRO ----
+   Atuam durante a semana, não só no dia do encontro. */
+const EQUIPES_FORA = [
+  { nome:"Social",   dep:"Ação social",        icone:"coracao",
+    txt:"Leva o JUPAC pra fora das quatro paredes — ação social e serviço à comunidade." },
+  { nome:"Liturgia", dep:"Celebrações",        icone:"livro",
+    txt:"Prepara as celebrações e cuida da liturgia do grupo." },
+  { nome:"Mídia",    dep:"Redes sociais",      icone:"tela",
+    txt:"Cuida das redes sociais e da comunicação do JUPAC durante a semana." },
+  { nome:"E outras",  dep:"Mais frentes",       icone:"pessoas",
+    txt:"Tem gente envolvida em outras frentes também — o JUPAC não para só no dia do encontro." }
 ];
 
 /* ---- GALERIA ----
@@ -614,11 +576,20 @@ const ORACAO = "Senhor, faz de nós teatro: que o que a gente vive no palco seja
 
     <div class="hero-btns">
       <a class="btn solido" href="#elenco">Ver o elenco</a>
-      <a class="btn" href="#cartaz">Em cartaz</a>
+      <a class="btn" href="#oracoes">Orações</a>
     </div>
   </div>
   <p class="rolar">role</p>
 </header>
+
+
+<!-- ══════════ AGENDA DA SEMANA ══════════ -->
+<div class="agenda-topo">
+  <div class="wrap">
+    <div class="agenda-grade" id="agenda-topo"></div>
+    <p class="agenda-nota">Mais informações no grupo do WhatsApp</p>
+  </div>
+</div>
 
 
 <main>
@@ -636,30 +607,48 @@ const ORACAO = "Senhor, faz de nós teatro: que o que a gente vive no palco seja
 </section>
 
 
-<!-- ══════════ EM CARTAZ ══════════ -->
-<section id="cartaz">
+<!-- ══════════ ORAÇÕES ══════════ -->
+<section id="oracoes">
   <div class="wrap">
     <div class="rev">
       <p class="eyebrow">Ficha técnica · 02</p>
-      <h2 class="sec">Em <em>cartaz</em></h2>
-      <p class="lead">As produções do JUPAC. Cada uma com um jeito diferente de dizer a mesma coisa.</p>
-      <p class="dica-arrasta">← arraste para o lado</p>
+      <h2 class="sec">Orações pra <em>começar</em></h2>
+      <p class="lead">Nunca rezou? Começa por aqui. São as orações mais simples — e as mais importantes.</p>
+    </div>
+
+    <div class="oracoes-lista" id="oracoes-lista"></div>
+
+    <div class="oracao-cta rev">
+      <p>Quer aprender a rezar o terço? Ele tem um guia próprio, com passo a passo e os mistérios de cada dia.</p>
+      <a class="btn solido" href="terco.html" target="_blank" rel="noopener">Abrir o guia do terço →</a>
     </div>
   </div>
-  <div class="wrap"><div class="trilho" id="trilho-posters"></div></div>
 </section>
 
 
-<!-- ══════════ BASTIDORES ══════════ -->
+<!-- ══════════ BASTIDORES — EQUIPES DO ENCONTRO ══════════ -->
 <section id="bastidores">
   <div class="wrap">
     <div class="rev">
       <p class="eyebrow">Ficha técnica · 03</p>
       <h2 class="sec">Os <em>bastidores</em></h2>
-      <p class="lead">Teatro é a parte que aparece. Mas nenhum encontro se sustenta em cima de um palco só — tem gente segurando cada canto do prédio.</p>
+      <p class="lead">Teatro é a parte que aparece. Mas nenhum encontro se sustenta em cima de um palco só — tem gente segurando cada canto do prédio, todo sábado.</p>
     </div>
     <div class="grade-eq" id="grade-eq"></div>
     <p class="versiculo rev">“Um corpo, muitos membros.”<span>1 Coríntios 12, 12</span></p>
+  </div>
+</section>
+
+
+<!-- ══════════ EQUIPES FORA DO ENCONTRO ══════════ -->
+<section id="equipes-fora">
+  <div class="wrap">
+    <div class="rev">
+      <p class="eyebrow">Ficha técnica · 04</p>
+      <h2 class="sec">Fora do <em>encontro</em></h2>
+      <p class="lead">O JUPAC não é só sábado. Durante a semana, tem gente segurando outras frentes.</p>
+    </div>
+    <div class="grade-eq" id="grade-eq-fora"></div>
   </div>
 </section>
 
@@ -668,7 +657,7 @@ const ORACAO = "Senhor, faz de nós teatro: que o que a gente vive no palco seja
 <section id="galeria" hidden>
   <div class="wrap">
     <div class="rev">
-      <p class="eyebrow">Ficha técnica · 04</p>
+      <p class="eyebrow">Ficha técnica · 05</p>
       <h2 class="sec">O <em>rolo</em></h2>
       <p class="lead">Bastidor, ensaio, bagunça e figurino torto.</p>
     </div>
@@ -713,7 +702,7 @@ const ORACAO = "Senhor, faz de nós teatro: que o que a gente vive no palco seja
     <div class="rp-linhas">
       <p>⛪ <strong id="rp-paroquia"></strong></p>
       <p>📍 <span id="rp-cidade"></span></p>
-      <p>📆 <strong id="rp-encontro"></strong></p>
+      <div id="rp-agenda"></div>
     </div>
     <a class="rp-insta" id="rp-insta" href="#" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -753,19 +742,18 @@ const semMovimento = mq('(prefers-reduced-motion: reduce)').matches;
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 /* ---------- ícones SVG ---------- */
-const GLIFOS = {
-  estrada:'<path d="M32 4 L26 60 M32 4 L38 60"/><path d="M32 16 v8 M32 32 v8 M32 48 v8"/><circle cx="48" cy="14" r="5"/>',
-  maos:   '<path d="M18 44 C18 30 24 22 32 22 C40 22 46 30 46 44"/><path d="M24 44 v10 M40 44 v10"/><path d="M26 30 L32 24 L38 30"/>',
-  porta:  '<rect x="18" y="10" width="28" height="46" rx="1"/><circle cx="39" cy="34" r="2"/><path d="M18 10 L46 10"/>',
-  microfone:'<rect x="26" y="10" width="12" height="26" rx="6"/><path d="M20 32 a12 12 0 0 0 24 0"/><path d="M32 44 v10 M24 54 h16"/>',
-  claquete:'<rect x="10" y="26" width="44" height="28" rx="2"/><path d="M10 26 L16 12 L58 18 L54 30"/><path d="M22 14 L18 27 M32 16 L28 28 M42 17 L38 29"/>'
-};
 const ICONES_EQ = {
-  escudo:   '<path d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5v-6L12 2.5Z"/>',
-  luz:      '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5.9 1.2.9 1.9V16h5.4v-.3c0-.7.3-1.4.9-1.9A6 6 0 0 0 12 3Z"/>',
+  vassoura: '<path d="M19 3 10.5 11.5"/><path d="M5 21c0-3.2 2.1-5.5 5.5-5.5S16 17.8 16 21"/><path d="M6.8 18.8 8.7 17M9.7 20.6l1.9-1.9M12.6 21l1.9-1.9"/>',
+  camera:   '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.4-2.8h5.2L16 7"/><circle cx="12" cy="13.5" r="3.4"/>',
   vela:     '<path d="M12 2.5s2.2 2.1 2.2 3.6a2.2 2.2 0 1 1-4.4 0C9.8 4.6 12 2.5 12 2.5Z"/><rect x="8.5" y="9.5" width="7" height="12" rx="1.4"/>',
   prancheta:'<rect x="4.5" y="3.5" width="15" height="17.5" rx="2"/><path d="M9 3.5V2.2h6v1.3"/><path d="M8.5 10h7M8.5 14h7M8.5 17.5h4"/>',
-  copo:     '<path d="M6 4.5h12l-1.2 15a2 2 0 0 1-2 1.9H9.2a2 2 0 0 1-2-1.9L6 4.5Z"/><path d="M6.6 10h10.8"/>',
+  nota:     '<path d="M9 18V5l10-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/>',
+  porta:    '<rect x="5" y="3" width="14" height="18" rx="1"/><circle cx="14.5" cy="12" r=".8" fill="currentColor" stroke="none"/>',
+  talher:   '<path d="M6.5 2v7.5a2 2 0 0 0 2 2V22"/><path d="M6.5 2v4.5M8.5 2v4.5M4.5 2v4.5"/><path d="M17 2c-2 0-3.2 2.1-3.2 5.2 0 2.4 1.2 4 3.2 4V22"/>',
+  coroa:    '<path d="M4 18h16l-1.4-8.4-4 3.8L12 6l-2.6 7.4-4-3.8L4 18Z"/>',
+  coracao:  '<path d="M12 20.3s-7.4-4.5-9.7-8.8C.7 7.4 2.6 3.8 6.5 3.8c2 0 3.6 1.2 5.5 3.3 1.9-2.1 3.5-3.3 5.5-3.3 3.9 0 5.8 3.6 4.2 7.7-2.3 4.3-9.7 8.8-9.7 8.8Z"/>',
+  livro:    '<path d="M4 5.3C4 4 5.1 3 6.4 3H12v18H6.4A2.4 2.4 0 0 1 4 18.6V5.3Z"/><path d="M20 5.3C20 4 18.9 3 17.6 3H12v18h5.6a2.4 2.4 0 0 0 2.4-2.4V5.3Z"/>',
+  tela:     '<rect x="6" y="2.5" width="12" height="19" rx="2"/><path d="M10 19h4"/>',
   pessoas:  '<circle cx="8.5" cy="8" r="3"/><circle cx="16.5" cy="9.5" r="2.4"/><path d="M3 20c0-3 2.5-5.2 5.5-5.2S14 17 14 20"/><path d="M15 14.9c2.6 0 4.5 1.9 4.5 4.3"/>'
 };
 
@@ -775,11 +763,21 @@ $('#sig-local').textContent   = INFO.paroquia + ' · ' + INFO.cidade;
 $('#rp-extenso').textContent  = INFO.extenso;
 $('#rp-paroquia').textContent = INFO.paroquia;
 $('#rp-cidade').textContent   = INFO.cidade;
-$('#rp-encontro').textContent = INFO.encontro;
 $('#rp-arroba').textContent   = INFO.arroba;
 $('#rp-insta').href           = INFO.instagram;
 $('#oracao-txt').textContent  = ORACAO;
 document.title = INFO.sigla + ' Pictures · Teatro — ' + INFO.paroquia;
+
+/* ---------- AGENDA (topo + rodapé) ---------- */
+$('#agenda-topo').innerHTML = AGENDA.map(a => `
+  <div class="agenda-item">
+    <span class="agenda-emoji">${a.emoji}</span>
+    <p class="agenda-evento">${esc(a.evento)}</p>
+    <p class="agenda-quando">${esc(a.quando)}</p>
+  </div>`).join('');
+
+$('#rp-agenda').innerHTML = AGENDA.map(a =>
+  `<p>${a.emoji} ${esc(a.evento)} · <strong>${esc(a.quando)}</strong></p>`).join('');
 
 /* ---------- ELENCO ---------- */
 $('#grade-elenco').innerHTML = ELENCO.map((p,i) => `
@@ -796,28 +794,24 @@ $('#grade-elenco').innerHTML = ELENCO.map((p,i) => `
     </div>
   </button>`).join('');
 
-/* ---------- PÔSTERES ---------- */
-$('#trilho-posters').innerHTML = ESQUETES.map((e,i) => `
-  <button class="poster rev ${e.claro?'claro':''}" data-esq="${i}" style="transition-delay:${Math.min(i*70,400)}ms">
-    <div class="poster-art ${e.arte}"></div>
-    ${e.fita?'<span class="fita"></span>':''}
-    <span class="poster-num">Prod. ${String(i+1).padStart(2,'0')}</span>
-    ${e.mudo?'<span class="selo-mudo">sem diálogos</span>':''}
-    <svg class="poster-glifo" viewBox="0 0 64 64" fill="none"
-         stroke="${e.claro?'rgba(30,28,22,.55)':'rgba(255,255,255,.55)'}"
-         stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      ${GLIFOS[e.glifo]||''}
-    </svg>
-    <div class="poster-corpo">
-      <p class="poster-titulo">${esc(e.titulo)}</p>
-      <p class="poster-tag">${esc(e.tag)}</p>
-      <p class="class-ind"><i style="background:${e.cor}"></i>${esc(e.classe)}</p>
-      <p class="poster-ver">ver sinopse →</p>
-    </div>
-  </button>`).join('');
+/* ---------- ORAÇÕES ---------- */
+$('#oracoes-lista').innerHTML = ORACOES_INICIANTES.map((o,i) => `
+  <div class="oracao-card rev" style="transition-delay:${Math.min(i*60,300)}ms">
+    <h3>${esc(o.titulo)}</h3>
+    <p>${esc(o.texto)}</p>
+  </div>`).join('');
 
-/* ---------- EQUIPES ---------- */
+/* ---------- EQUIPES DO ENCONTRO ---------- */
 $('#grade-eq').innerHTML = EQUIPES.map((q,i) => `
+  <article class="eq rev" style="transition-delay:${Math.min(i*60,400)}ms">
+    <svg viewBox="0 0 24 24" aria-hidden="true">${ICONES_EQ[q.icone]||''}</svg>
+    <h3 class="eq-nome">${esc(q.nome)}</h3>
+    <p class="eq-dep">${esc(q.dep)}</p>
+    <p class="eq-txt">${esc(q.txt)}</p>
+  </article>`).join('');
+
+/* ---------- EQUIPES FORA DO ENCONTRO ---------- */
+$('#grade-eq-fora').innerHTML = EQUIPES_FORA.map((q,i) => `
   <article class="eq rev" style="transition-delay:${Math.min(i*60,400)}ms">
     <svg viewBox="0 0 24 24" aria-hidden="true">${ICONES_EQ[q.icone]||''}</svg>
     <h3 class="eq-nome">${esc(q.nome)}</h3>
@@ -906,7 +900,6 @@ document.addEventListener('click', ev => {
   const cardAtor = ev.target.closest('[data-ator]');
   if (cardAtor){
     const p = ELENCO[+cardAtor.dataset.ator];
-    const emCena = ESQUETES.filter(e => (e.elenco||[]).includes(p.nome)).map(e => e.titulo);
     abrir(`
       <p class="ficha-kicker">Ficha do elenco</p>
       <h3 class="ficha-titulo">${esc(p.nome)}</h3>
@@ -915,22 +908,6 @@ document.addEventListener('click', ev => {
         <div><dt>Função</dt><dd>${esc(p.funcao)}</dd></div>
         <div><dt>Citação de</dt><dd>${esc(p.autor)}</dd></div>
         <div><dt>Grupo</dt><dd>${esc(INFO.sigla)} — ${esc(INFO.extenso)}</dd></div>
-        ${emCena.length?`<div><dt>Em cena</dt><dd>${emCena.map(esc).join(', ')}</dd></div>`:''}
-      </dl>`);
-    return;
-  }
-  const cardEsq = ev.target.closest('[data-esq]');
-  if (cardEsq){
-    const e = ESQUETES[+cardEsq.dataset.esq];
-    abrir(`
-      <p class="ficha-kicker">Em cartaz</p>
-      <h3 class="ficha-titulo">${esc(e.titulo)}</h3>
-      <p class="ficha-sinopse">${esc(e.sinopse)}</p>
-      <dl class="ficha-linhas">
-        <div><dt>Gênero</dt><dd>${esc(e.genero)}</dd></div>
-        <div><dt>Classificação</dt><dd>${esc(e.classe)}</dd></div>
-        ${e.elenco?`<div><dt>Elenco</dt><dd>${e.elenco.map(esc).join(', ')}</dd></div>`:''}
-        <div><dt>Produção</dt><dd>${esc(INFO.sigla)} Pictures</dd></div>
       </dl>`);
   }
 });
@@ -957,7 +934,7 @@ if (!semMovimento && mq('(pointer:fine)').matches){
 
 /* ---------- inclinação 3D nos cards (só no computador) ---------- */
 if (!semMovimento && mq('(pointer:fine)').matches){
-  document.querySelectorAll('.ator, .poster').forEach(card => {
+  document.querySelectorAll('.ator').forEach(card => {
     card.addEventListener('pointermove', ev => {
       const r = card.getBoundingClientRect();
       const px = (ev.clientX-r.left)/r.width - .5, py = (ev.clientY-r.top)/r.height - .5;

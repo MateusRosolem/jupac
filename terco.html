@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Como rezar o terço — JUPAC</title>
+<meta name="description" content="Guia passo a passo pra rezar o terço, com os mistérios de cada dia da semana. JUPAC — Paróquia Menino Jesus de Praga.">
+<meta name="theme-color" content="#0A0A0C">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230A0A0C'/><text x='50' y='68' font-size='46' font-family='Georgia,serif' font-weight='bold' fill='%23E5C264' text-anchor='middle'>J</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --preto:#0A0A0C;
+  --carvao:#16161A;
+  --carvao2:#1F1F25;
+  --ouro:#E5C264;
+  --ouro-esc:#8A6F2E;
+  --creme:#F2EEE4;
+  --cinza:#8A8A93;
+  --disp:'Anton',Impact,'Arial Narrow',sans-serif;
+  --corpo:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --mono:'Courier Prime','Courier New',monospace;
+  --max:760px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--preto);color:var(--creme);font-family:var(--corpo);
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:22px}
+
+header{padding:56px 22px 40px;text-align:center;border-bottom:1px solid #1c1c22}
+.voltar{
+  display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.68rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--cinza);transition:color .3s;
+}
+.voltar:hover{color:var(--ouro)}
+.eyebrow{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--ouro);margin:26px 0 14px;
+}
+h1{
+  font-family:var(--disp);font-size:clamp(2.6rem,10vw,4.2rem);line-height:.92;
+  text-transform:uppercase;letter-spacing:.01em;
+}
+h1 em{font-style:normal;color:var(--ouro)}
+.lead{color:var(--cinza);max-width:52ch;margin-inline:auto;margin-top:16px;font-size:1rem}
+
+section{padding:clamp(50px,9vw,90px) 0}
+h2.sec{
+  font-family:var(--disp);font-size:clamp(1.7rem,6vw,2.4rem);text-transform:uppercase;
+  line-height:.95;margin-bottom:.3em;
+}
+h2.sec em{font-style:normal;color:var(--ouro)}
+
+.terco-horario{
+  border:1px solid var(--ouro-esc);border-radius:3px;padding:22px;text-align:center;
+  background:rgba(229,194,100,.05);margin-bottom:48px;
+}
+.terco-horario span{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cinza);
+}
+.terco-horario b{
+  display:block;margin-top:8px;font-family:var(--disp);font-size:clamp(1.3rem,4.6vw,1.8rem);
+  text-transform:uppercase;color:var(--ouro);letter-spacing:.02em;
+}
+
+.terco-lista{display:grid;gap:12px}
+.terco-passo{
+  background:var(--carvao);border:1px solid #26262d;border-radius:3px;
+  padding:16px 18px;display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;
+}
+.terco-passo-num{font-family:var(--disp);font-size:1.35rem;color:var(--ouro);line-height:1.1}
+.terco-passo-titulo{font-family:var(--disp);font-size:1.05rem;text-transform:uppercase;letter-spacing:.01em}
+.terco-passo-texto{font-size:.86rem;color:var(--cinza);margin-top:5px;line-height:1.55}
+
+.terco-mist-grade{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:26px}
+@media(min-width:600px){.terco-mist-grade{grid-template-columns:repeat(4,1fr)}}
+.terco-mist-card{
+  background:var(--carvao);border:1px solid #26262d;border-radius:3px;
+  padding:16px 12px;text-align:center;
+}
+.terco-mist-card.destaque{border-color:var(--ouro);background:var(--carvao2)}
+.terco-mist-dias{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cinza)}
+.terco-mist-nome{font-family:var(--disp);font-size:1.15rem;text-transform:uppercase;margin-top:9px;color:var(--creme)}
+.terco-mist-card.destaque .terco-mist-nome{color:var(--ouro)}
+
+footer{border-top:1px solid #1c1c22;padding-block:40px;text-align:center}
+.rp-logo{font-family:var(--disp);font-size:1.6rem;text-transform:uppercase;color:var(--ouro);letter-spacing:.04em}
+.rp-fim{margin-top:14px;font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--cinza)}
+
+:focus-visible{outline:2px solid var(--ouro);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║   ⭐ EDITE AQUI ⭐  — passo a passo e mistérios do terço.  ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<script>
+const TERCO_QUANDO = "Sexta-feira, à noite";
+
+const TERCO_PASSOS = [
+  { titulo:"Sinal da Cruz", texto:"Segurando o crucifixo: “Em nome do Pai, do Filho e do Espírito Santo.”" },
+  { titulo:"Credo", texto:"Reze o Creio em Deus Pai, ainda segurando o crucifixo." },
+  { titulo:"Pai-Nosso", texto:"Na primeira conta grande do terço." },
+  { titulo:"3 Ave-Marias", texto:"Uma por cada virtude: fé, esperança e caridade." },
+  { titulo:"Glória ao Pai", texto:"“Glória ao Pai, ao Filho e ao Espírito Santo…”" },
+  { titulo:"Anuncie o mistério", texto:"Diga qual mistério vai meditar (veja a lista abaixo) e faça uma pequena pausa antes de começar." },
+  { titulo:"1 dezena", texto:"1 Pai-Nosso + 10 Ave-Marias + 1 Glória ao Pai. Repita esse bloco para cada um dos 5 mistérios do dia." },
+  { titulo:"Jaculatória", texto:"Ao fim de cada dezena: “Ó meu Jesus, perdoai-nos, livrai-nos do fogo do inferno, levai as almas todas para o Céu, principalmente as que mais precisarem.”" },
+  { titulo:"Salve Rainha", texto:"Depois das 5 dezenas, encerre com a Salve Rainha." }
+];
+
+/* destaque:true = dia em que o JUPAC reza o terço junto (sexta) */
+const MISTERIOS = [
+  { dias:"Segunda · Sábado", nome:"Gozosos" },
+  { dias:"Terça · Sexta",    nome:"Dolorosos", destaque:true },
+  { dias:"Quarta · Domingo", nome:"Gloriosos" },
+  { dias:"Quinta",           nome:"Luminosos" }
+];
+</script>
+<!-- ╚═══════════════ fim do bloco editável ═══════════════╝ -->
+
+<header>
+  <a class="voltar" href="index.html">← Voltar para o site</a>
+  <p class="eyebrow">Guia do terço</p>
+  <h1>Como rezar o <em>terço</em></h1>
+  <p class="lead">Não precisa saber de cor. É só seguir o passo a passo — e se quiser rezar com a gente, é toda sexta.</p>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <div class="terco-horario">
+      <span>Terço em grupo</span>
+      <b id="terco-quando"></b>
+    </div>
+
+    <div class="terco-lista" id="terco-passos"></div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Mistérios do dia</p>
+    <h2 class="sec">Qual meditar <em>hoje</em></h2>
+    <p class="lead" style="margin-inline:0">Cada dia da semana tem um grupo de mistérios. Sexta — dia do nosso terço — é dia de Mistérios Dolorosos.</p>
+    <div class="terco-mist-grade" id="terco-mist-grade"></div>
+  </section>
+
+</main>
+
+<footer>
+  <p class="rp-logo">JUPAC</p>
+  <p class="rp-fim">Paróquia Menino Jesus de Praga · São José do Rio Preto · SP</p>
+</footer>
+
+<script>
+(function(){
+"use strict";
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+$('#terco-quando').textContent = TERCO_QUANDO;
+
+$('#terco-passos').innerHTML = TERCO_PASSOS.map((p,i) => `
+  <div class="terco-passo">
+    <span class="terco-passo-num">${String(i+1).padStart(2,'0')}</span>
+    <div>
+      <p class="terco-passo-titulo">${esc(p.titulo)}</p>
+      <p class="terco-passo-texto">${esc(p.texto)}</p>
+    </div>
+  </div>`).join('');
+
+$('#terco-mist-grade').innerHTML = MISTERIOS.map(m => `
+  <div class="terco-mist-card ${m.destaque?'destaque':''}">
+    <p class="terco-mist-dias">${esc(m.dias)}</p>
+    <p class="terco-mist-nome">${esc(m.nome)}</p>
+  </div>`).join('');
+})();
+</script>
+</body>
+</html>
