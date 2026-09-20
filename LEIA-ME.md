@@ -72,7 +72,7 @@ Bloco `TERCO_PASSOS` — cada linha é um passo, na ordem em que aparece na tela
 
 ### Trocar as equipes (do encontro e de fora)
 
-Dois blocos no `index.html`: `EQUIPES` (as que atuam no dia do encontro — Ordem, Luz, Capela, Secretaria, Música, Recepção, Cozinha, Coordenação) e `EQUIPES_FORA` (as que atuam durante a semana — Social, Liturgia, Mídia). Cada uma tem `nome`, `dep` (a linha pequena embaixo do nome) e `txt`. Ícone é o campo `icone` — os disponíveis estão listados em `ICONES_EQ` no JS, mais abaixo no arquivo.
+Dois blocos no `index.html`: `EQUIPES` (as que atuam no dia do encontro — Ordem, Luz, Capela, Secretaria, Música, Recepção, Cozinha, Sineteiros, Coordenação) e `EQUIPES_FORA` (as que atuam durante a semana — Social, Liturgia, Comunicação). Cada uma tem `nome`, `dep` (a linha pequena embaixo do nome) e `txt`. Ícone é o campo `icone` — os disponíveis estão listados em `ICONES_EQ` no JS, mais abaixo no arquivo.
 
 ### Ligar a galeria de fotos
 
